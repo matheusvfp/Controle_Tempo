@@ -41,7 +41,7 @@ def mostrar_aviso(tempo_espera):
         if tempo_restante <= 60 and not tempo_extra_adicionado:
             tempo_restante += 120
             tempo_extra_adicionado = True
-            atualizar_tempo_restante()  # Atualiza a contagem regressiva
+            atualizar_tempo_restante() 
         elif tempo_restante > 60:
             label.config(text="Você só pode adicionar tempo extra no minuto final.")
         else:
@@ -105,5 +105,5 @@ def mostrar_aviso(tempo_espera):
     root.mainloop()
 
 if __name__ == "__main__":
-    tempo_espera = 20 
+    tempo_espera = 3600 
     mostrar_aviso(tempo_espera)
