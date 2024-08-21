@@ -19,3 +19,68 @@ Este projeto é um script em Python desenvolvido para monitorar e controlar o te
 - **Tkinter:** Biblioteca para criar a interface gráfica.
 - **ctypes:** Para interagir com a API do Windows.
 
+## Como Usar
+
+# Guia de Configuração
+
+1. **Clone o Repositório:**
+
+   Primeiro, clone o repositório e navegue para o diretório do projeto:
+
+   ```bash
+   git clone https://github.com/seu-usuario/controle-tempo-uso-computador.git
+   cd controle-tempo-uso-computador
+
+2. **Instale as Dependências**
+
+   Certifique-se de ter o Python instalado em sua máquina. Em seguida, siga os passos abaixo para configurar o ambiente virtual e instalar as dependências necessárias:
+
+   2.1 **Crie e ative um ambiente virtual:**
+
+      No Windows:
+
+      ```bash
+      python -m venv venv
+      venv\Scripts\activate
+      ```
+
+      No macOS ou Linux:
+
+      ```bash
+      python -m venv venv
+      source venv/bin/activate
+      ```
+
+   2.2 **Instale as dependências necessárias:**
+
+      Com o ambiente virtual ativado, execute o seguinte comando para instalar as dependências listadas no arquivo `requirements.txt`:
+
+      ```bash
+      pip install -r requirements.txt
+      ```
+
+3. **Execute o Script**
+
+
+Para iniciar o controle de tempo, basta executar o script principal:
+```bash
+   python main.py
+   ```
+
+4. **Configuração do Tempo:**
+
+O tempo padrão para o uso do computador está configurado dentro do código. Se desejar alterar o tempo, modifique o valor na linha correspondente no script `main.py`.
+
+5. **Adicionar Tempo Extra:**
+
+No último minuto da contagem regressiva, você pode clicar no botão "Adicionar Tempo Extra" para ganhar 2 minutos adicionais.
+
+
+## Apoie o Projeto 🙌
+Se você quiser apoiar o projeto, deixe uma ⭐.
+
+______
+
+Made with ❤️ by [Matheus Vinícius](https://www.linkedin.com/in/matheusviniciusfp/).
+
+
