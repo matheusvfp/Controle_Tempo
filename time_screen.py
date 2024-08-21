@@ -34,18 +34,14 @@ def mostrar_aviso(tempo_espera):
 
     def adicionar_tempo_extra():
         """
-        Adiciona 2 minutos (120 segundos) ao tempo restante e atualiza a interface.
-        Somente é possível adicionar tempo extra uma vez, e somente no minuto final.
+        Adiciona 4 minutos (240 segundos) ao tempo restante e atualiza a interface.
+        Oculta o botão após adicionar o tempo extra.
         """
         nonlocal tempo_restante, tempo_extra_adicionado
-        if tempo_restante <= 60 and not tempo_extra_adicionado:
-            tempo_restante += 180
-            tempo_extra_adicionado = True
-            atualizar_tempo_restante() 
-        elif tempo_restante > 60:
-            label.config(text="Você só pode adicionar tempo extra no minuto final.")
-        else:
-            label.config(text="Tempo extra já foi adicionado.")
+        tempo_restante += 240
+        tempo_extra_adicionado = True
+        tempo_extra_button.pack_forget()  # Oculta o botão após adicionar o tempo extra
+        atualizar_tempo_restante()
 
     root = tk.Tk()
     root.title("Aviso de Bloqueio")
@@ -67,7 +63,7 @@ def mostrar_aviso(tempo_espera):
     tempo_restante = tempo_espera  # Tempo restante atual
     tempo_extra_adicionado = False  # Flag para verificar se o tempo extra já foi adicionado
 
-    # Botão para adicionar 3 minutos ao tempo restante
+    # Botão para adicionar 4 minutos ao tempo restante
     tempo_extra_button = ttk.Button(frame, text="Adicionar Tempo Extra", command=adicionar_tempo_extra, style="TButton")
     # Inicialmente, o botão está oculto
     tempo_extra_button.pack(pady=10)
@@ -109,5 +105,5 @@ def mostrar_aviso(tempo_espera):
     root.mainloop()
 
 if __name__ == "__main__":
-    tempo_espera = 65 
+    tempo_espera = 3600 
     mostrar_aviso(tempo_espera)
