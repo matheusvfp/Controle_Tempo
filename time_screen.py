@@ -39,7 +39,7 @@ def mostrar_aviso(tempo_espera):
         """
         nonlocal tempo_restante, tempo_extra_adicionado
         if tempo_restante <= 60 and not tempo_extra_adicionado:
-            tempo_restante += 120
+            tempo_restante += 180
             tempo_extra_adicionado = True
             atualizar_tempo_restante() 
         elif tempo_restante > 60:
@@ -67,6 +67,12 @@ def mostrar_aviso(tempo_espera):
     tempo_restante = tempo_espera  # Tempo restante atual
     tempo_extra_adicionado = False  # Flag para verificar se o tempo extra já foi adicionado
 
+    # Botão para adicionar 3 minutos ao tempo restante
+    tempo_extra_button = ttk.Button(frame, text="Adicionar Tempo Extra", command=adicionar_tempo_extra, style="TButton")
+    # Inicialmente, o botão está oculto
+    tempo_extra_button.pack(pady=10)
+    tempo_extra_button.pack_forget()
+
     def atualizar_tempo_restante():
         """
         Atualiza o tempo restante na interface e a barra de progresso.
@@ -80,6 +86,8 @@ def mostrar_aviso(tempo_espera):
         if tempo_restante > 0:
             label.config(text=f"Tempo restante: {formatar_tempo(tempo_restante)}")
             progress['value'] = 100 * (1 - (tempo_restante / tempo_inicial))
+            if tempo_restante <= 60 and not tempo_extra_adicionado:
+                tempo_extra_button.pack()  # Exibe o botão no último minuto
             tempo_restante -= 1
             root.after(1000, atualizar_tempo_restante)
         else:
@@ -88,10 +96,6 @@ def mostrar_aviso(tempo_espera):
             root.after(1000, lambda: [root.destroy(), bloquear_computador()])
 
     atualizar_tempo_restante()
-    
-    # Botão para adicionar 2 minutos ao tempo restante
-    tempo_extra_button = ttk.Button(frame, text="Adicionar Tempo Extra", command=adicionar_tempo_extra, style="TButton")
-    tempo_extra_button.pack(pady=10)
 
     # Adiciona estilo ao botão
     style = ttk.Style()
@@ -105,5 +109,5 @@ def mostrar_aviso(tempo_espera):
     root.mainloop()
 
 if __name__ == "__main__":
-    tempo_espera = 3600 
+    tempo_espera = 65 
     mostrar_aviso(tempo_espera)
