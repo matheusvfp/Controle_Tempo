@@ -8,7 +8,7 @@ Este projeto é um script em Python desenvolvido para monitorar e controlar o te
 
 - **Bloqueio de Tela:** Usa a API do Windows para bloquear a estação de trabalho.
 - **Contagem Regressiva:** Exibe uma janela com uma contagem regressiva até o bloqueio do computador.
-- **Tempo Extra:** Permite adicionar 3 minutos de tempo extra apenas no último minuto da contagem, para "salvar" a sessão no modo carreira 😄.
+- **Tempo Extra:** Permite adicionar 2 minutos de tempo extra apenas no último minuto da contagem.
 - **Interface Gráfica:** Apresenta uma interface amigável com uma barra de progresso e a opção de adicionar tempo extra.
 - **Segurança:** O botão de fechar a janela do script foi desativado para evitar interrupções não autorizadas 😅.
 - **Observação:** A interação de tempo extra foi limitada para evitar o bug do tempo ilimitado.
